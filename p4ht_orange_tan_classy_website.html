@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partners 4 Hope Tanzania</title>
+
+  <style>
+    :root {
+      --burnt-orange: #b85f2a;
+      --deep-orange: #8f421f;
+      --tan: #f4ead8;
+      --light-tan: #fbf6ec;
+      --warm-brown: #4f3828;
+      --soft-brown: #7a644f;
+      --cream: #fffaf1;
+      --white: #ffffff;
+      --gold: #d7a84f;
+      --border: #e1d0b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--warm-brown);
+      background: var(--cream);
+      line-height: 1.7;
+      font-size: 19px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .top-bar {
+      background: var(--deep-orange);
+      color: white;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 17px;
+      letter-spacing: 0.2px;
+    }
+
+    header {
+      background: rgba(255, 250, 241, 0.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-wrap {
+      max-width: 1180px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-mark {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--burnt-orange);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: bold;
+      font-size: 20px;
+      border: 3px solid var(--gold);
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: bold;
+      color: var(--deep-orange);
+      line-height: 1.1;
+    }
+
+    .tagline {
+      font-size: 15px;
+      color: var(--soft-brown);
+      font-style: italic;
+    }
+
+    nav {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav a {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--warm-brown);
+      padding: 9px 12px;
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      background: var(--tan);
+    }
+
+    .donate-small {
+      background: var(--burnt-orange);
+      color: white !important;
+      padding: 11px 20px;
+    }
+
+    .hero {
+      min-height: 640px;
+      display: grid;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(79, 56, 40, 0.86), rgba(143, 66, 31, 0.54)),
+        url("https://p4ht.org/wp-content/uploads/2023/03/IMG_7792-1-scaled.jpg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 24px;
+    }
+
+    .hero-content {
+      max-width: 980px;
+      margin: auto;
+      width: 100%;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 15px;
+      font-weight: bold;
+      color: #ffe4b8;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(43px, 6vw, 72px);
+      line-height: 1.05;
+      max-width: 800px;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      font-size: 24px;
+      max-width: 740px;
+      margin-bottom: 34px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 28px;
+      border-radius: 9px;
+      font-size: 20px;
+      font-weight: bold;
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--burnt-orange);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: var(--cream);
+      color: var(--deep-orange);
+      border-color: var(--cream);
+    }
+
+    section {
+      padding: 78px 24px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .section-title h2 {
+      font-size: 43px;
+      color: var(--deep-orange);
+      margin-bottom: 12px;
+      line-height: 1.15;
+    }
+
+    .section-title p {
+      color: var(--soft-brown);
+      max-width: 790px;
+      margin: auto;
+      font-size: 21px;
+    }
+
+    .photo-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: -42px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .photo-strip img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 8px solid var(--cream);
+      box-shadow: 0 12px 30px rgba(79, 56, 40, 0.18);
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 26px rgba(79, 56, 40, 0.08);
+      border: 1px solid var(--border);
+      border-top: 7px solid var(--burnt-orange);
+    }
+
+    .card h3 {
+      color: var(--deep-orange);
+      font-size: 27px;
+      margin-bottom: 12px;
+    }
+
+    .highlight {
+      background: var(--tan);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .split-box {
+      background: white;
+      padding: 42px;
+      border-radius: 18px;
+      box-shadow: 0 10px 26px rgba(79, 56, 40, 0.08);
+      border: 1px solid var(--border);
+    }
+
+    .split-box h2 {
+      color: var(--deep-orange);
+      font-size: 38px;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+
+    .feature-img {
+      width: 100%;
+      height: 430px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(79, 56, 40, 0.16);
+    }
+
+    .project-list {
+      display: grid;
+      gap: 28px;
+    }
+
+    .project {
+      background: white;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 26px rgba(79, 56, 40, 0.08);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+    }
+
+    .project img {
+      width: 100%;
+      height: 100%;
+      min-height: 260px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 34px;
+      border-left: 8px solid var(--gold);
+    }
+
+    .project h3 {
+      font-size: 31px;
+      color: var(--deep-orange);
+      margin-bottom: 10px;
+    }
+
+    .giving-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .gift {
+      background: white;
+      padding: 34px;
+      border-radius: 18px;
+      box-shadow: 0 10px 26px rgba(79, 56, 40, 0.08);
+      border: 1px solid var(--border);
+    }
+
+    .gift h3 {
+      font-size: 28px;
+      color: var(--deep-orange);
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 34px;
+      font-weight: bold;
+      color: var(--burnt-orange);
+      margin-bottom: 14px;
+    }
+
+    ul {
+      padding-left: 24px;
+      margin-top: 10px;
+    }
+
+    .newsletter-wrap {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .newsletter-box {
+      background: white;
+      padding: 44px;
+      border-radius: 18px;
+      box-shadow: 0 10px 26px rgba(79, 56, 40, 0.08);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .newsletter-box input {
+      width: 100%;
+      padding: 17px;
+      margin: 18px 0 12px;
+      font-size: 20px;
+      border: 2px solid var(--border);
+      border-radius: 9px;
+      background: var(--light-tan);
+    }
+
+    footer {
+      background: var(--warm-brown);
+      color: white;
+      padding: 48px 24px;
+      text-align: center;
+    }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 940px) {
+      .cards,
+      .giving-grid,
+      .split,
+      .newsletter-wrap,
+      .photo-strip,
+      .project {
+        grid-template-columns: 1fr;
+      }
+
+      .project-content {
+        border-left: none;
+        border-top: 8px solid var(--gold);
+      }
+
+      .nav-wrap {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .brand {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 90px 24px;
+      }
+
+      body {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-bar">
+    Helping communities in Tanzania through education, water, health, and empowerment.
+  </div>
+
+  <header>
+    <div class="nav-wrap">
+      <div class="brand">
+        <div class="brand-mark">P4H</div>
+        <div>
+          <div class="logo">Partners 4 Hope Tanzania</div>
+          <div class="tagline">Planting seeds of sustainability</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#projects">Our Projects</a>
+        <a href="#donate" class="donate-small">Donate</a>
+        <a href="#newsletter">Newsletter</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Faith • Hope • Lasting Change</div>
+        <h1>Planting Seeds of Hope in Tanzania</h1>
+        <p>
+          Partners 4 Hope Tanzania helps villages grow through sustainable water access,
+          education, women’s empowerment, and health care support.
+        </p>
+        <div class="button-row">
+          <a class="btn btn-primary" href="#donate">Donate Now</a>
+          <a class="btn btn-secondary" href="#projects">See Our Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="container photo-strip">
+      <img src="https://p4ht.org/wp-content/uploads/2023/03/IMG_9786-2-scaled.jpg" alt="Women in Tanzania connected with Partners 4 Hope Tanzania">
+      <img src="https://p4ht.org/wp-content/uploads/2023/03/IMG-5030-1-scaled.jpg" alt="Children in Tanzania supported by Partners 4 Hope Tanzania">
+      <img src="https://p4ht.org/wp-content/uploads/2023/03/IMG_7792-1-scaled.jpg" alt="Children gathered at a community site in Tanzania">
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>The Seeds of Hope</h2>
+          <p>
+            Our mission is to plant seeds of sustainability in villages where there are
+            little or no resources. We focus on four simple areas of impact.
+          </p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Sustain</h3>
+            <p>Helping families gain access to water tanks and basic resources for daily life.</p>
+          </div>
+          <div class="card">
+            <h3>Educate</h3>
+            <p>Sponsoring students through the Educate-4-Life program and supporting school growth.</p>
+          </div>
+          <div class="card">
+            <h3>Empower</h3>
+            <p>Providing microloans for women entrepreneurs through the Woman-to-Woman project.</p>
+          </div>
+          <div class="card">
+            <h3>Develop</h3>
+            <p>Supporting health care access through the M.O.M.s Health Center and Hope-4-Health.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlight">
+      <div class="container split">
+        <div class="split-box">
+          <h2>Faith, Service, and Real Impact</h2>
+          <p>
+            Partners 4 Hope Tanzania works with communities in Tanzania to support practical,
+            life-changing projects. Every gift helps families, students, women, and mothers
+            receive the support they need to build a stronger future.
+          </p>
+          <br>
+          <p>
+            This design keeps the site warm, clear, and easy to use, with larger text,
+            strong contrast, simple buttons, and real photos from the P4HT website.
+          </p>
+        </div>
+
+        <img class="feature-img" src="https://p4ht.org/wp-content/uploads/2022/02/ewtnphoto-2.jpg" alt="Mark and Molly Druffner on EWTN">
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Projects</h2>
+          <p>
+            Each project is designed to be simple, practical, and sustainable for the communities we serve.
+          </p>
+        </div>
+
+        <div class="project-list">
+          <div class="project">
+            <img src="https://p4ht.org/wp-content/uploads/2023/03/IMG_7792-1-scaled.jpg" alt="Children in Tanzania">
+            <div class="project-content">
+              <h3>Sustain: Water Tanks</h3>
+              <p>
+                Many families in Bwambo need reliable access to water. Water tanks help families
+                store and share water for daily use. Each tank can be shared by multiple families
+                and holds up to 2,641 gallons of water.
+              </p>
+            </div>
+          </div>
+
+          <div class="project">
+            <img src="https://p4ht.org/wp-content/uploads/2023/03/IMG-5030-1-scaled.jpg" alt="Students and children in Tanzania">
+            <div class="project-content">
+              <h3>Educate: Student Sponsorship</h3>
+              <p>
+                Through the Educate-4-Life program, donors help sponsor a child’s education.
+                Sponsorship helps provide schooling and lunch support for students.
+              </p>
+            </div>
+          </div>
+
+          <div class="project">
+            <img src="https://p4ht.org/wp-content/uploads/2023/03/IMG_9786-2-scaled.jpg" alt="Women connected with the Woman-to-Woman project">
+            <div class="project-content">
+              <h3>Empower: Woman-to-Woman Microloans</h3>
+              <p>
+                Microloans help women start small businesses and support their families.
+                More than 50 successful businesses have been started through this program.
+              </p>
+            </div>
+          </div>
+
+          <div class="project">
+            <img src="https://p4ht.org/wp-content/uploads/2022/02/ewtnphoto-2.jpg" alt="P4HT featured on EWTN">
+            <div class="project-content">
+              <h3>Develop: Hope-4-Health</h3>
+              <p>
+                The Hope-4-Health program supports the M.O.M.s Health Center in the Hedaru Region,
+                helping mothers receive transportation, prenatal care, delivery support, medication,
+                and postnatal care.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DONATE -->
+    <section class="highlight" id="donate">
+      <div class="container">
+        <div class="section-title">
+          <h2>Donate</h2>
+          <p>
+            Your donation directly supports practical needs in Tanzania. Choose an area of impact below.
+          </p>
+        </div>
+
+        <div class="giving-grid">
+          <div class="gift">
+            <h3>Sponsor a Child’s Education</h3>
+            <div class="price">$25/month</div>
+            <p>Or a one-time gift of $250.</p>
+            <ul>
+              <li>Supports elementary school education</li>
+              <li>Helps provide lunches for children</li>
+            </ul>
+          </div>
+
+          <div class="gift">
+            <h3>Microloans for Startup Businesses</h3>
+            <div class="price">$100/loan</div>
+            <p>Help a woman entrepreneur start or grow a small business.</p>
+            <ul>
+              <li>Over 50 successful businesses started</li>
+              <li>Women have paid their support forward</li>
+            </ul>
+          </div>
+
+          <div class="gift">
+            <h3>Water Tank for Family Homes</h3>
+            <div class="price">$600/tank</div>
+            <p>Provide water storage for families in Bwambo.</p>
+            <ul>
+              <li>Shared by 4 families</li>
+              <li>Holds up to 2,641 gallons of water</li>
+            </ul>
+          </div>
+
+          <div class="gift">
+            <h3>Labor and Delivery Sponsorship</h3>
+            <div class="price">$1,000</div>
+            <p>Support a mother through care before, during, and after delivery.</p>
+            <ul>
+              <li>Transportation</li>
+              <li>Prenatal care</li>
+              <li>Labor and delivery</li>
+              <li>Medication and postnatal care</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="text-align:center; margin-top:38px;">
+          <a class="btn btn-primary" href="https://www.p4ht.org/donate" target="_blank">Give Through P4HT</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section id="newsletter">
+      <div class="container newsletter-wrap">
+        <img class="feature-img" src="https://p4ht.org/wp-content/uploads/2023/03/IMG_9786-2-scaled.jpg" alt="Women in Tanzania">
+
+        <div class="newsletter-box">
+          <h2 style="font-size:40px; color:var(--deep-orange); line-height:1.15; margin-bottom:14px;">
+            Sign Up for P4HT News and Updates
+          </h2>
+          <p>
+            Receive annual newsletters and occasional stories about the communities,
+            students, mothers, and families you are helping.
+          </p>
+
+          <form>
+            <input type="email" placeholder="Enter your email address" />
+            <br />
+            <button class="btn btn-primary" type="submit">Sign Up</button>
+          </form>
+
+          <p style="margin-top:20px; color:var(--soft-brown); font-size:17px;">
+            This form is a design placeholder. Connect it to Mailchimp,
+            Constant Contact, Wix Forms, Squarespace Forms, or your newsletter service.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Partners 4 Hope Tanzania</strong></p>
+    <p>Executive Director: Molly Delaney Druffner</p>
+    <p>1004 5th Street North, Stillwater, MN 55082</p>
+    <p>715-781-8936 | info@p4ht.org</p>
+    <p style="margin-top:20px;">© 2026 Partners 4 Hope Tanzania. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
